@@ -50,9 +50,9 @@ const logger = new(winston.Logger)({
 * __silent__: Boolean flag indicating whether to suppress output. (default: false)
 * __graylogHost__: your server address (default: localhost)
 * __graylogPort__: your server port (default: 12201)
-* __graylogFlag__: Required on Thot Alpha
-* __graylogOvhTokenKey__: Required on Thot Beta
-* __graylogOvhTokenValue__: Required on Thot Beta
+* __graylogFlag__: Required on LDP Alpha
+* __graylogOvhTokenKey__: Required on LDP Beta
+* __graylogOvhTokenValue__: Required on LDP Beta
 * __hostname__: the name of this host (default: os.hostname())
 * __facility__: the facility for these log messages (default: "Node.js")
 
