@@ -1,0 +1,36 @@
+{
+  "name": "ovh-winston-ldp",
+  "description": "A OVH Logs Data Platform TCP/TLS transport for winston",
+  "license": "BSD-3-Clause",
+  "version": "0.3.0",
+  "author": "Pierre De Paepe <pierre.de-paepe@corp.ovh.com>",
+  "scripts": {
+    "lint": "jscs lib && jshint lib && jscs test && jshint test",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ovh/ovh-winston-ldp.git"
+  },
+  "keywords": [
+    "logging",
+    "sysadmin",
+    "tools",
+    "winston",
+    "graylog2",
+    "gelf"
+  ],
+  "dependencies": {
+    "winston": "~1.0.0"
+  },
+  "devDependencies": {
+    "chai": "3.5.0",
+    "jscs": "*",
+    "jshint": "2.8.0",
+    "mocha": "2.2.5"
+  },
+  "main": "./lib/ovh-winston-ldp",
+  "engines": {
+    "node": ">= 6.0.0"
+  }
+}
