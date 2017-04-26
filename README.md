@@ -21,7 +21,7 @@ Winston-graylog works with NodeJS 6.0.0+.
 The easiest way to install it is to use [yarn](https://yarnpkg.com/en/)
 
 ```bash
-$yarn add git://github.com/ovh/ovh-winston-ldp.git
+$yarn add ovh-winston-ldp
 ```
 
 ## Usage
