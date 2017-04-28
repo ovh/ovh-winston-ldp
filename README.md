@@ -2,6 +2,8 @@
 
 A [graylog2][0] TCP/TLS transport for [winston][1] library
 
+[![NPM](https://nodei.co/npm/ovh-winston-ldp.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ovh-winston-ldp/)
+
 ```javascript
 const winston = require('winston');
 winston.add(require('ovh-winston-ldp'), {
