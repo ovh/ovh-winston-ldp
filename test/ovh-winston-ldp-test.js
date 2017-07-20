@@ -1,9 +1,16 @@
 "use strict";
 
-var assert = require("chai").assert;
-var winston = require("winston");
-var OvhWinstonLDP = require("../lib/ovh-winston-ldp");
-var Message = require("../lib/message.js");
+const chai = require("chai");
+const Message = require("../lib/message.js");
+const OvhWinstonLDP = require("../lib/ovh-winston-ldp");
+const spies = require("chai-spies");
+const winston = require("winston");
+
+chai.use(spies);
+
+const assert = chai.assert;
+const should = chai.should();
+const expect = chai.expect;
 
 describe("winston-graylog2", function () {
     describe("Creating the transport", function () {
@@ -16,12 +23,12 @@ describe("winston-graylog2", function () {
             assert.ok(OWLDP.handleExceptions === false);
         });
 
-        it("should have a log function", function () {
+        it("Should have a log function", function () {
             var OWLDP = new OvhWinstonLDP();
             assert.ok(typeof OWLDP.log === "function");
         });
 
-        it("can be registered as winston transport", function () {
+        it("Can be registered as winston transport", function () {
             var logger = new (winston.Logger)({
                 exitOnError: false,
                 transports: [new OvhWinstonLDP()]
@@ -30,7 +37,7 @@ describe("winston-graylog2", function () {
             assert.ok(logger.transports.hasOwnProperty("graylog2"));
         });
 
-        it("can be registered as winston transport using the add() function", function () {
+        it("Can be registered as winston transport using the add() function", function () {
             var logger = new (winston.Logger)({
                 exitOnError: false,
                 transports: []
@@ -39,6 +46,30 @@ describe("winston-graylog2", function () {
             logger.add(OvhWinstonLDP);
 
             assert.ok(logger.transports.hasOwnProperty("graylog2"));
+        });
+    });
+
+    describe("Validating the transport", function () {
+        var ovhWinstonLDP;
+
+        beforeEach(function () {
+            ovhWinstonLDP = new OvhWinstonLDP();
+        });
+
+        it("Calling close() when existing client, will close that client socket", function () {
+            ovhWinstonLDP.client = {
+                end : chai.spy()
+            };
+
+            ovhWinstonLDP.close();
+
+            expect(ovhWinstonLDP.client.end).to.have.been.called.once();
+        });
+
+        it("Calling close() when client was not created, will not raise an exeption", function () {
+            should.not.exist(ovhWinstonLDP.client);
+
+            ovhWinstonLDP.close();
         });
 
     });
