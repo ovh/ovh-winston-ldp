@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "chai": "3.5.0",
+    "chai-spies": "^0.7.1",
     "jscs": "*",
     "jshint": "2.8.0",
     "mocha": "2.2.5"
