@@ -50,6 +50,7 @@ const logger = new(winston.Logger)({
 * __name__:  Transport name
 * __level__: Level of messages this transport should log. (default: info)
 * __silent__: Boolean flag indicating whether to suppress output. (default: false)
+* __autoReconnect__: Boolean flag indicating whether to reconnect on error. (default: false)
 * __graylogHost__: your server address (default: localhost)
 * __graylogPort__: your server port (default: 12201)
 * __graylogFlag__: Required on LDP Alpha
