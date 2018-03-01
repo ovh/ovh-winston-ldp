@@ -56,8 +56,8 @@ const logger = new(winston.Logger)({
 * __graylogFlag__: Required on LDP Alpha
 * __graylogOvhTokenKey__: Required on LDP Beta
 * __graylogOvhTokenValue__: Required on LDP Beta
-* __hostname__: the name of this host (default: os.hostname())
-* __facility__: the facility for these log messages (default: "Node.js")
+* __graylogHostname__: the name of this host (default: os.hostname())
+* __graylogFacility__: the facility for these log messages (default: "NodeJS")
 
 
 ## Log Levels
