@@ -63,7 +63,7 @@ describe("winston-graylog2", function () {
 
             ovhWinstonLDP.close();
 
-            expect(ovhWinstonLDP.client.end).to.have.been.called.once();
+            expect(ovhWinstonLDP.client.end).to.have.been.called.once;
         });
 
         it("Calling close() when client was not created, will not raise an exeption", function () {
