@@ -2,10 +2,10 @@
   "name": "ovh-winston-ldp",
   "description": "A OVH Logs Data Platform TCP/TLS transport for winston",
   "license": "BSD-3-Clause",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "author": "Pierre De Paepe <pierre.de-paepe@corp.ovh.com>",
   "scripts": {
-    "lint": "jscs lib && jshint lib && jscs test && jshint test",
+    "lint": "eslint lib && jshint lib && eslint test && jshint test",
     "test": "mocha"
   },
   "repository": {
@@ -21,14 +21,14 @@
     "gelf"
   ],
   "dependencies": {
-    "winston": "~1.0.0"
+    "winston": "2.4.4"
   },
   "devDependencies": {
-    "chai": "3.5.0",
-    "chai-spies": "^0.7.1",
-    "jscs": "*",
-    "jshint": "2.8.0",
-    "mocha": "2.2.5"
+    "chai": "4.2.0",
+    "chai-spies": "1.0.0",
+    "eslint": "6.0.1",
+    "jshint": "2.10.2",
+    "mocha": "6.1.4"
   },
   "main": "./lib/ovh-winston-ldp",
   "engines": {
